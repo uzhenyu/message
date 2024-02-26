@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package demo;
+option go_package="./demo";
+
+message LoginRequest {
+  string username = 10;
+  string password = 20;
+}
+
+message LoginResponse {
+  int64 userid = 1;
+}
+
+service Demo {
+  rpc Login(LoginRequest) returns(LoginResponse);
+}
